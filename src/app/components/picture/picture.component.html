@@ -1,3 +1,6 @@
-<p *ngFor="let item of items">
-  picture works!
-</p>
+<h3>img</h3>
+<section *ngFor="let item of imgList">
+   <div>
+     <img class="img" [src]="'//img.hb.aicdn.com/'+item?.file.key" [alt]="item.link">
+   </div> 
+</section>
