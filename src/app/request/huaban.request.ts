@@ -8,5 +8,5 @@ import { hostPath } from '../config/config'
 export class HuabanService {
   constructor(private http: HttpClient) {}
   getHuabanHome = () => this.http.get(`${hostPath}/huabanhome`)
-  getAnthorInfo = (params:any) => this.http.post(`${hostPath}/anthor`, params)
+  getAnthorInfo = (params:any) => this.http.post(`${hostPath}/author`, params)
 }

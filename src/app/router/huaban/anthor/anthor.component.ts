@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Router, ActivatedRoute} from '@angular/router';
 import { HuabanService } from '../../../request/huaban.request'
-
+import {imgHost} from '../../../config/config';
 @Component({
   selector: 'app-anthor',
   templateUrl: './anthor.component.html',
@@ -16,14 +16,18 @@ export class AnthorComponent implements OnInit {
   ) { }
   type:string = ''
   urlname:string = ''
+  imgHost:string = '';
+  list:any[] = [];
   getInfo(params:any) {
     this.http.getAnthorInfo(params).subscribe((res:any) => {
-      console.log('数据:---->', res)
+      if(res.result) this.list = JSON.parse(res.result)
+      console.log(this.list)
     }, (err:any) => {
       console.log('err', err)
     })
   }
   ngOnInit() {
+    this.imgHost = imgHost;
     this.route.params.subscribe((params:any) => {
       this.type = params.type
       this.urlname = params.urlname

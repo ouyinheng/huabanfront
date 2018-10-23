@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HuabanService } from '../../../request/huaban.request'
 import {Router,ActivatedRoute} from '@angular/router';
-
+import {imgHost} from '../../../config/config';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -13,9 +13,10 @@ export class HomeComponent implements OnInit {
     private http:HuabanService,
     private router:Router
   ) { }
-  host:string = '//img.hb.aicdn.com/'
   imgList:any[] = []
+  imgHost:string = '';
   ngOnInit() {
+    this.imgHost = imgHost;
     this.http.getHuabanHome().subscribe((res:any) => {
       if(res.result)this.imgList = JSON.parse(res.result);
       console.log('this.imgList:----->',this.imgList)

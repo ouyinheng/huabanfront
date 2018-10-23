@@ -3,7 +3,7 @@
   <div class="img-group">
     <div *ngFor="let item of imgList" class="img-out" (click)="navTo(item.type, item.urlname)">
       <a >
-        <img [src]="host+item?.cover.key" [alt]="item?.title">
+        <img [src]="imgHost+item?.cover.key" [alt]="item?.title">
       </a>
     </div>
   </div>

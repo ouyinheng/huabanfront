@@ -1,0 +1,42 @@
+.author-out {
+  width: 100%;
+  background: #f5f5f5;
+  padding: 50px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-around;
+  .author-section {
+    width: 100%;
+    max-width: 1237px;
+    min-height: 600px;
+    display: flex;
+    flex-wrap: wrap;
+    .img-item {
+      margin: 0 15px 4px 0;
+      .author-header {
+        display: block;
+        padding: 0;
+        margin: 0;
+        width: 236px;
+      }
+      .author-footer {
+        width: 236px;
+        height: 65px;
+    
+        padding: 10px;
+        box-sizing: border-box;
+        background-color: white;
+        display: flex;
+        align-items: center;
+        &-left {
+          margin-right: 10px;
+          img {
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+          }
+        }
+      }
+    }
+  }
+}
