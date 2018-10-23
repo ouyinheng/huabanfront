@@ -1,22 +1,23 @@
 .section-img {
   width: 100%;
+  padding: 50px 0;
   display: flex;
   justify-content: space-around;
   .img-group {
     width: 1244px;
     display: flex;
     flex-wrap: wrap;
-  }
-  .img-out {
-    width: 308px;
-    height: 308px;
-    margin: 0 3px 3px 0;
-    a {
-      outline: 0;
-      img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
+    .img-out {
+      width: 308px;
+      height: 308px;
+      margin: 0 3px 3px 0;
+      a {
+        outline: 0;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
       }
     }
   }

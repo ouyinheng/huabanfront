@@ -6,13 +6,13 @@
   display: flex;
   justify-content: space-around;
   .author-section {
-    width: 100%;
-    max-width: 1237px;
-    min-height: 600px;
-    display: flex;
-    flex-wrap: wrap;
+    column-count: 4;
+    column-gap:20px;
+    padding: 10px;
     .img-item {
-      margin: 0 15px 4px 0;
+      clear: both;
+      margin: 0 15px 15px 0;
+      box-shadow: 0 1px 3px rgba(0,0,0,.02), 0 4px 8px rgba(0,0,0,.02);
       .author-header {
         display: block;
         padding: 0;
