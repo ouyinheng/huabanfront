@@ -1,3 +1,117 @@
+.tj-header {
+  width: 100%;
+  min-height: 500px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: opacity 200ms ease-in-out;
+  #tpCls {
+    background-color: white;
+    color: black;
+    .login {
+      background: gainsboro;
+      color: black;
+    }
+    .btnCls {
+      color: white;
+    }
+  }
+  .mask {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0,0,0,.2);
+  }
+  .tj-nav {
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+    align-items: center;
+    padding: 0 200px;
+    color: white;
+    &-left {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      span {
+        display: inline-block;
+        margin: 0 10px; 
+        cursor: pointer;
+      }
+    }
+    &-right {
+      .btn {
+        display: inline-block;
+        border: 1px solid white;
+        border-radius: 4px;
+        width: 50px;
+        height: 20px;
+        line-height: 20px;
+        padding: 5px 10px;
+        text-align: center;
+        margin-right: 5px;
+      }
+      .reg {
+        background-color: #ec414d;
+        border: none;
+      }
+    }
+  }
+  .title-out {
+    height: 520px;
+    position: relative;
+    margin: 0 auto;
+    overflow: hidden;
+    .title {
+      margin: 118px auto 40px;
+      width: 540px;
+      height: 54px;
+      line-height: 54px;
+      color: #fff;
+      font-family: "sy-sans";
+      font-size: 44px;
+      font-weight: 200;
+      text-align: center;
+      text-shadow: 0 10px 30px rgba(0,0,0,.3), 0 2px 10px rgba(0,0,0,.2);
+      -webkit-font-smoothing: antialiased;
+    }
+  }
+  
+  .search-box {
+    width: 536px;
+    position: relative;
+    margin: 0 auto;
+    input {
+      padding: 0 10px;
+      width: 536px;
+      height: 40px;
+      border: 1px solid rgba(255,255,255,.95);
+      border-radius: 2px;
+      background-color: rgba(255,255,255,.95);
+      color: #444;
+      box-shadow: 0 16px 32px 0 rgba(0,0,0,.07), 0 1px 3px 0 rgba(0,0,0,.02), 0 0 0 1px rgba(0,0,0,.1);
+      box-sizing: border-box;
+    }
+    span {
+      position: absolute;
+      display: block;
+      top: 0;
+      right: 0;
+      width: 40px;
+      height: 40px;
+      line-height: 40px;
+      cursor: pointer;
+      font-size: 1.2rem;
+      background-color: rgba(255,255,255,.95);
+    }
+  }
+}
 .section-img {
   width: 100%;
   padding: 20px 0 10px;

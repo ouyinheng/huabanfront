@@ -16,7 +16,16 @@ export class HomeComponent implements OnInit {
   imgList:any[] = []
   imgHost:string = '';
   page:number = 1;
+  tpCls:string = null;
+  btnCls:string = null;
+  login:string = null
   ngOnInit() {
+    window.addEventListener('scroll',(e:any)=>{
+      let top = document.documentElement.scrollTop;
+      this.tpCls = top >= 100?'tpCls':''
+      this.btnCls = top >= 100?'btnCls':''
+      this.login = top >= 100?'login':''
+    })
     this.imgHost = imgHost;
     this.http.getHuabanHome(1).subscribe((res:any) => {
       if(res.result)this.imgList = JSON.parse(res.result);

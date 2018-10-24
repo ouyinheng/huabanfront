@@ -1,4 +1,34 @@
 <!-- 推荐 -->
+<header class="tj-header" style="background-image: url('http://hbfile.b0.upaiyun.com/img/home/banner/ae1b2a5b8e939b936072ea75a75479734860a20eea073');">
+  <nav class="tj-nav" [id]="tpCls">
+    <div class="tj-nav-left">
+        <img src="/assets/images/logo_wt.svg" alt="">
+        <span>首页</span>
+        <span>发现</span>
+        <span>最新</span>
+        <span class="iconfont icon-menu" style="font-size: 1.3rem;"></span>
+        <span>活动</span>
+        <span>美素</span>
+        <span>美思</span>
+        <span>美物</span>
+        <span>花瓣LIVE</span>
+    </div>
+    <div class="tj-nav-right">
+      <span class="btn {{login}}">登录</span>
+      <span class="btn reg {{btnCls}}">注册</span>
+    </div>
+  </nav>
+  <div class="title-out">
+    <div class="title">花瓣，陪你做生活的设计师</div>
+    <div class="search-box">
+      <input type="text" placeholder="搜你喜欢的">
+      <span href="#" onclick="return false;" class="iconfont icon-search go" ></span>
+    </div>
+    <div style="text-align: center;padding: 10px 0;color: white;">
+      <p>热门搜索：双十一素材、创意合成、壁纸那些事</p>
+    </div>
+  </div>
+</header>
 <section class="section-img">
   <div class="img-group">
     <div *ngFor="let item of imgList" class="img-out" (click)="navTo(item.type, item.urlname, item.board_id)">
