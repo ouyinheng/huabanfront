@@ -1,18 +1,2 @@
-<div class="author-out">
-  <section class="author-section">
-    <div *ngFor="let item of list" class="img-item">
-      <img class="author-header" [src]="imgHost+item?.file.key" [alt]="item?.board.title">
-      <footer class="author-footer">
-        <div class="author-footer-left">
-          <img [src]="imgHost+item?.user.avatar.key" alt="">
-        </div>
-        <div class="author-footer-right">
-          <div>
-            <div>{{item?.user.username}}</div>
-            <div>{{item?.board.title}}</div>
-          </div>
-        </div>
-      </footer>
-    </div>
-  </section>
-</div>  
+<app-explores *ngIf="type=='explores'" [list]="list"></app-explores>
+<app-boards *ngIf="type=='boards'" [infos]="infos"></app-boards>

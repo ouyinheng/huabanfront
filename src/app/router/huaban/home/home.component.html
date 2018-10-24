@@ -1,10 +1,26 @@
 <!-- 推荐 -->
 <section class="section-img">
   <div class="img-group">
-    <div *ngFor="let item of imgList" class="img-out" (click)="navTo(item.type, item.urlname)">
-      <a >
-        <img [src]="imgHost+item?.cover.key" [alt]="item?.title">
+    <div *ngFor="let item of imgList" class="img-out" (click)="navTo(item.type, item.urlname, item.board_id)">
+      <a *ngIf="item.cover.key">
+        <img [src]="imgHost+item.cover.key" [alt]="item?.title">
+      </a>
+      <a *ngIf="item.avatar" class="section-user">
+        <div style="display: flex;flex-direction: column;align-items: center;font-size: 0.8rem;">
+            <img [src]="imgHost+item?.avatar.key" [alt]="item?.title">
+            <span style="font-size: 1.1rem;">{{item.title}}</span>
+            <p style="padding-top: 5px;color: gray;">
+              <span>{{item.pin_count}}&nbsp;采集&nbsp;&nbsp;&nbsp;</span>
+              <span>{{item.follow_count}}&nbsp;粉丝</span>
+            </p>
+        </div>
       </a>
     </div>
+    <span class="emp"></span>
+    <span class="emp"></span>
+    <span class="emp"></span>
   </div>
 </section>
+<div class="loadMore">
+  <p (click)="loadMore()">加载更多</p>
+</div>

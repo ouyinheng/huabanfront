@@ -15,16 +15,29 @@ export class HomeComponent implements OnInit {
   ) { }
   imgList:any[] = []
   imgHost:string = '';
+  page:number = 1;
   ngOnInit() {
     this.imgHost = imgHost;
-    this.http.getHuabanHome().subscribe((res:any) => {
+    this.http.getHuabanHome(1).subscribe((res:any) => {
       if(res.result)this.imgList = JSON.parse(res.result);
       console.log('this.imgList:----->',this.imgList)
     }, (err:any) => {
       console.log('err:----->',err)
     })
   }
-  navTo(type:string, urlname:string) {
-    this.router.navigate([`/huaban/anthor/${type}/${urlname}`])
+  getHomeImage(page:number) {
+    this.http.getHuabanHome(page).subscribe((res:any) => {
+      if(res.result)this.imgList.push(...JSON.parse(res.result).recommends)
+    }, (err:any) => {
+      console.log('err:----->',err)
+    })
+  }
+  navTo(type:string, urlname:string, board_id:string) {
+    if(type=='users') return;
+    if(type=='boards')window.open(`/huaban/anthor/${type}/${board_id}`)
+    else window.open(`/huaban/anthor/${type}/${urlname}`)
+  }
+  loadMore() {
+    this.getHomeImage(++this.page)
   }
 }

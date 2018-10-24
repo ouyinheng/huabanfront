@@ -5,6 +5,8 @@ import { ComModule } from '../../components/com.module';
 
 import { HomeComponent } from './home/home.component';
 import { AnthorComponent } from './anthor/anthor.component';
+import { BoardsComponent } from './boards/boards.component';
+import { ExploresComponent } from './explores/explores.component';
 @NgModule({
   imports: [
     CommonModule,
@@ -15,7 +17,7 @@ import { AnthorComponent } from './anthor/anthor.component';
     ]),
     ComModule
   ],
-  declarations: [ HomeComponent, AnthorComponent ],
+  declarations: [ HomeComponent, AnthorComponent, BoardsComponent, ExploresComponent ],
   exports: [ RouterModule ]
 })
 export class HuabanModule { }
