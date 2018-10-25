@@ -1,12 +1,32 @@
 <!-- 推荐 -->
-<header class="tj-header" style="background-image: url('http://hbfile.b0.upaiyun.com/img/home/banner/ae1b2a5b8e939b936072ea75a75479734860a20eea073');">
+<header class="tj-header" [style.background-image]="'url('+bannerImg+')'">
   <nav class="tj-nav" [id]="tpCls">
     <div class="tj-nav-left">
         <img src="/assets/images/logo_wt.svg" alt="">
         <span>首页</span>
         <span>发现</span>
         <span>最新</span>
-        <span class="iconfont icon-menu" style="font-size: 1.3rem;"></span>
+        <span class="iconfont icon-menu showMenu" style="font-size: 1.3rem;" (mouseleave)="visibleMenu=false" (mouseenter)="visibleMenu=true">
+          <div class="menu" *ngIf="visibleMenu">
+            <header class="menu-header v-center">
+              <h3>教育</h3>
+              <h3>移动应用</h3>
+              <h3>采集工具</h3>
+            </header>
+            <section class="menu-section">
+              <div *ngFor="let item of menu?.categories">{{item.name}}</div>
+            </section>
+            <footer class="v-center">
+              <span class="iconfont icon-tuding"></span>
+              <div class="v-center" style="text-align: center;">
+                <span>关于</span>
+                <span>帮助中心</span>
+                <span>反馈</span>
+                <span>博客</span>
+              </div>
+            </footer>
+          </div>
+        </span>
         <span>活动</span>
         <span>美素</span>
         <span>美思</span>
@@ -21,7 +41,7 @@
   <div class="title-out">
     <div class="title">花瓣，陪你做生活的设计师</div>
     <div class="search-box">
-      <input type="text" placeholder="搜你喜欢的">
+      <input type="text" #search placeholder="搜你喜欢的" [(value)]="searchValue" (change)="search()" (keyup.enter)="enter(search.value)">
       <span href="#" onclick="return false;" class="iconfont icon-search go" ></span>
     </div>
     <div style="text-align: center;padding: 10px 0;color: white;">
@@ -46,11 +66,17 @@
         </div>
       </a>
     </div>
-    <span class="emp"></span>
-    <span class="emp"></span>
-    <span class="emp"></span>
+    <span class="emp" *ngIf="imgList.length%4<=3&&imgList.length%4>0"></span>
+    <span class="emp" *ngIf="imgList.length%4<=2&&imgList.length%4>0"></span>
+    <span class="emp" *ngIf="imgList.length%4<=1&&imgList.length%4>0"></span>
   </div>
 </section>
 <div class="loadMore">
   <p (click)="loadMore()">加载更多</p>
 </div>
+<footer style="max-width: 1000px;margin: 0 auto;padding: 20px 0">
+  <p style="color: gray;font-size: 1.2rem">以分类浏览花瓣</p>
+  <div class="favorite">
+    <div *ngFor="let item of favorite" style="padding: 5px;color: #222;font-size: 0.8rem;">{{item.name}}</div>
+  </div>
+</footer>
