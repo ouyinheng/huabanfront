@@ -33,7 +33,7 @@ export class HomeComponent implements OnInit {
       let top = document.documentElement.scrollTop;
       this.tpCls = top >= 100?'tpCls':''
       this.btnCls = top >= 100?'btnCls':''
-      this.login = top >= 100?'login':''
+      this.login = top >= 100?'my-btn-g':''
     })
     this.imgHost = imgHost;
     this.http.getHuabanHome(1).subscribe((res:any) => {

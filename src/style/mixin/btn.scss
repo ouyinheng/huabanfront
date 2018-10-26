@@ -1,0 +1,16 @@
+%button {
+  border: none;
+  outline: none;
+  user-select: none;
+  cursor: pointer;
+}
+
+@mixin Button($bg) {
+  background-color: $bg;
+  &:hover {
+    background-color: lightColor($bg);
+  }
+  &:active {
+    background-color: darkColor($bg);
+  }
+}

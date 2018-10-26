@@ -1,0 +1,9 @@
+@each $key, $val in $colors {
+  .my-btn-#{$key} {
+    @extend %button;
+    @include Button($val);
+  }
+}
+.my-btn-trans {
+  @extend %button;
+}

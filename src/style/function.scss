@@ -1,0 +1,9 @@
+@function lightColor($color) {
+  @return lighten($color, 10%);
+}
+@function darkColor($color) {
+  @return lighten($color, 20%);
+}
+@function transColor($color) {
+  @return lighten($color, 100%);
+}

@@ -1,0 +1,38 @@
+@each $key, $var in $padding {
+  .p-#{$key} {
+    padding: $var;
+  }
+  .m-#{$key} {
+    margin: $var;
+  }
+  .py-#{$key} {
+    padding-top: $var;
+    padding-bottom: $var;
+  }
+  .px-#{$key} {
+    padding-left: $var;
+    padding-right: $var;
+  }
+  .my-#{$key} {
+    margin-top: $var;
+    margin-bottom: $var;
+  }
+  .mx-#{$key} {
+    margin-left: $var;
+    margin-right: $var;
+  }
+  @each $keys, $vars in $direction {
+    .p#{$keys}-#{$key} {
+      padding-#{$vars}: $var;
+    }
+    .m#{$keys}-#{$key} {
+      margin-#{$vars}: $var;
+    }
+  }
+}
+
+$font: (
+  sm: 0.6rem,
+  md: 0.7rem,
+  lg: 0.8rem
+)

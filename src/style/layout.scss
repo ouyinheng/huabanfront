@@ -1,0 +1,19 @@
+.flex {
+  display: flex;
+}
+.v-center {
+  @extend .flex;
+  align-items: center;
+}
+.flex-h {
+  @extend .flex;
+  flex-direction: column;
+}
+.flex-a {
+  @extend .flex;
+  justify-content: space-around;
+}
+.flex-b {
+  @extend .flex;
+  justify-content: space-between;
+}

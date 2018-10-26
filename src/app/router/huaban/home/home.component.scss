@@ -1,3 +1,4 @@
+$colors-w: #ec414d;
 .tj-header {
   width: 100%;
   min-height: 500px;
@@ -13,7 +14,7 @@
       color: black;
     }
     .btnCls {
-      color: white;
+      color: $colors-w;
     }
   }
   .mask {
@@ -86,22 +87,7 @@
       }
     }
     &-right {
-      .btn {
-        display: inline-block;
-        border: 1px solid white;
-        border-radius: 4px;
-        width: 50px;
-        height: 20px;
-        line-height: 20px;
-        padding: 5px 10px;
-        text-align: center;
-        margin-right: 5px;
-        cursor: pointer;
-      }
-      .reg {
-        background-color: #ec414d;
-        border: 1px solid #ec414d;
-      }
+      
     }
   }
   .title-out {
