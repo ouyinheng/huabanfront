@@ -1,0 +1,25 @@
+.o-dialog {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color:rgba($color: #000000, $alpha: 0.3);
+    overflow: hidden;
+    z-index: 10;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    .o-item {
+        min-width: 400px;
+        max-width: 700px;
+        width: 45%;
+        min-height: 500px;
+        max-height: 900px;
+        height: 60%;
+        margin: 0 auto;
+        border: 1px solid gainsboro;
+    }
+}

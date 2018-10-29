@@ -1,4 +1,3 @@
-$colors-w: #ec414d;
 .tj-header {
   width: 100%;
   min-height: 500px;
@@ -9,13 +8,7 @@ $colors-w: #ec414d;
   #tpCls {
     background-color: white;
     color: black;
-    .login {
-      background: gainsboro;
-      color: black;
-    }
-    .btnCls {
-      color: $colors-w;
-    }
+    
   }
   .mask {
     position: absolute;
@@ -29,13 +22,19 @@ $colors-w: #ec414d;
     line-height: 50px;
     position: fixed;
     top: 0;
+    left: 50%;
+    right: 50%;
+    transform: translate(-50%, 0);
     z-index: 10;
-    display: flex;
-    justify-content: space-between;
-    box-sizing: border-box;
-    align-items: center;
-    padding: 0 100px;
     color: white;
+    .center {
+      max-width: 1300px;
+      display: flex;
+      justify-content: space-between;
+      box-sizing: border-box;
+      align-items: center;
+      margin: 0 auto;
+    }
     &-left {
       display: flex;
       justify-content: space-between;
@@ -114,6 +113,21 @@ $colors-w: #ec414d;
     width: 536px;
     position: relative;
     margin: 0 auto;
+    .list-groups {
+      width: 100%;
+      position: absolute;
+      top: 40px;
+      left: 0;
+      background-color: white;
+      cursor: pointer;
+
+      .list-items {
+        padding: 5px;
+        &:hover {
+          background-color: rgba(237,237,237,.9);
+        }
+      }
+    }
     input {
       padding: 0 10px;
       width: 536px;
@@ -135,7 +149,7 @@ $colors-w: #ec414d;
       line-height: 40px;
       cursor: pointer;
       font-size: 1.2rem;
-      background-color: rgba(255,255,255,.95);
+      text-align: center;
     }
   }
 }

@@ -16,9 +16,17 @@
       </div>
     </header>
     <section class="boards-section">
-      <div *ngFor="let item of infos?.pins" class="img-group">
+      <div *ngFor="let item of infos?.pins,let i=index" class="img-group" (click)="showDialog(i)">
         <img [src]="host+item.file.key" [alt]="item.file.theme">
       </div>
     </section>
     <footer></footer>
+</div>
+<div class="o-dialog" *ngIf="visibleDialog">
+    <span class="fa fa-times close" aria-hidden="true" (click)="close()"></span>
+    <span class="fa fa-angle-left left" aria-hidden="true"></span>
+    <span class="fa fa-angle-right right" aria-hidden="true"></span>
+    <dialog open class="o-item">
+        asdf
+    </dialog>
 </div>

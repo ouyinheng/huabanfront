@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { ComModule } from '../../components/com.module';
+import { FormsModule } from '@angular/forms';
 
 import { HomeComponent } from './home/home.component';
 import { AnthorComponent } from './anthor/anthor.component';
@@ -15,7 +16,8 @@ import { ExploresComponent } from './explores/explores.component';
       {path: 'anthor/:type/:urlname', component: AnthorComponent}
 
     ]),
-    ComModule
+    ComModule,
+    FormsModule
   ],
   declarations: [ HomeComponent, AnthorComponent, BoardsComponent, ExploresComponent ],
   exports: [ RouterModule ]

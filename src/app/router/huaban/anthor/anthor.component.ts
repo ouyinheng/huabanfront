@@ -18,6 +18,7 @@ export class AnthorComponent implements OnInit {
   urlname:string = null;
   list:any[] = [];
   infos:any = null
+  visibleDialog:boolean = false;
   getInfo(params:any) {
     this.http.getAnthorInfo(params).subscribe((res:any) => {
       if(res.result) {
@@ -28,6 +29,9 @@ export class AnthorComponent implements OnInit {
     }, (err:any) => {
       console.log('err', err)
     })
+  }
+  showImg(index:string) {
+
   }
   ngOnInit() {
     this.route.params.subscribe((params:any) => {

@@ -1,8 +1,9 @@
 <!-- 推荐 -->
 <header class="tj-header" [style.background-image]="'url('+bannerImg+')'">
   <nav class="tj-nav" [id]="tpCls">
-    <div class="tj-nav-left">
-        <img src="/assets/images/logo_wt.svg" alt="">
+    <div class="center">
+      <div class="tj-nav-left">
+        <img [src]="tpCls?'/assets/images/logo_red.svg':'/assets/images/logo_wt.svg'" alt="">
         <span>首页</span>
         <span>发现</span>
         <span>最新</span>
@@ -32,17 +33,21 @@
         <span>美思</span>
         <span>美物</span>
         <span>花瓣LIVE</span>
-    </div>
-    <div class="tj-nav-right">
-      <span class="my-btn-trans mr-2 px-2 py-1 {{login}}">登录</span>
-      <span class="my-btn-w font-color-b px-2 py-1">注册</span>
+      </div>
+      <div class="tj-nav-right">
+        <span class="my-btn-trans mr-2 px-3 py-1 {{login}}">登录</span>
+        <span class="my-btn-w font-color-b px-3 py-1">注册</span>
+      </div>
     </div>
   </nav>
   <div class="title-out">
     <div class="title">花瓣，陪你做生活的设计师</div>
     <div class="search-box">
-      <input type="text" #search placeholder="搜你喜欢的" [(value)]="searchValue" (change)="search()" (keyup.enter)="enter(search.value)">
+      <input type="text" placeholder="搜你喜欢的" [(ngModel)]="searchValue" (input)="search()" (keyup.enter)="enter()">
       <span href="#" onclick="return false;" class="iconfont icon-search go" ></span>
+      <div class="list-groups" *ngIf="searchValue">
+        <p *ngFor="let item of searchList" class="list-items" (click)="enter(item)">{{item}}</p>
+      </div>
     </div>
     <div style="text-align: center;padding: 10px 0;color: white;">
       <p>热门搜索：双十一素材、创意合成、壁纸那些事</p>

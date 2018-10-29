@@ -27,7 +27,8 @@ export class HomeComponent implements OnInit {
   bannerImg:string = '';
   visibleMenu:boolean = false;
   favorite:any = null;
-  searchValue:string = ''
+  searchValue:string = '';
+  searchList:any = [];
   ngOnInit() {
     window.addEventListener('scroll',(e:any)=>{
       let top = document.documentElement.scrollTop;
@@ -66,16 +67,20 @@ export class HomeComponent implements OnInit {
     this.visibleMenu = true;
   }
   search() {
+    console.log(this.searchValue)
+    if(!this.searchValue)this.searchList=[];
     this.http.searchAuto({q:this.searchValue,size:6}).subscribe((res:any) => {
       console.log('值',res)
+      this.searchList = res.result.list
     }, (err:any) => {
       console.log('错误',err)
     })
   }
   enter(val:string) {
-    console.log(val)
-    this.http.search({q:val}).subscribe((res:any) => {
+    if(val)this.searchValue = val;
+    this.http.search({q:this.searchValue}).subscribe((res:any) => {
       console.log('值',res)
+
     }, (err:any) => {
       console.log('错误',err)
     })

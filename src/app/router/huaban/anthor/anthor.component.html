@@ -1,2 +1,2 @@
-<app-explores *ngIf="type=='explores'" [list]="list"></app-explores>
+<app-explores *ngIf="type=='explores'" [list]="list" (showImg)="showImg()"></app-explores>
 <app-boards *ngIf="type=='boards'" [infos]="infos"></app-boards>
