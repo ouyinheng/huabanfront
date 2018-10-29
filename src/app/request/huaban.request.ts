@@ -11,4 +11,5 @@ export class HuabanService {
   getAnthorInfo = (params:any) => this.http.post(`${hostPath}/author`, params)
   searchAuto = (params:any) => this.http.get(`${hostPath}/searchAuto?q=${params.q}&size=${params.size}`)
   search = (params:any) => this.http.get(`${hostPath}/search?q=${params.q}`)
+  boardsMore = (params:any) => this.http.post(`${hostPath}/borads`, params)
 }
