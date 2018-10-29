@@ -1,0 +1,35 @@
+.o-msg {
+  width: 400px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  font-size: 1rem;
+  background-color: $msgDiv-color;
+  color: $msgDiv-font-color;
+  font-weight: bold;
+  position: fixed;
+  top: -80px;
+  left: 50%;
+  right: 50%;
+  transform: translate(-50%, 50%);
+  z-index: 200;
+  animation: msg 2s;
+  border-radius: 5px;
+}
+
+@keyframes msg {
+  0% {
+    top: -80px
+  }
+  50% {
+    top: 10px;
+  }
+  100% {
+    top: 10px;
+  }
+}
+
+.intro {
+  color: $color-g;
+  font-size: $font-md;
+}

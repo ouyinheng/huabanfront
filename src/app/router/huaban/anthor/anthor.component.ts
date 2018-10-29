@@ -22,10 +22,11 @@ export class AnthorComponent implements OnInit {
   getInfo(params:any) {
     this.http.getAnthorInfo(params).subscribe((res:any) => {
       if(res.result) {
-        this.list = JSON.parse(res.result)
         if(this.type=='boards')this.infos = JSON.parse(res.result)
+        else {
+          this.list = JSON.parse(res.result);
+        }
       }
-      // console.log(this.infos)
     }, (err:any) => {
       console.log('err', err)
     })

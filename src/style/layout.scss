@@ -17,3 +17,10 @@
   @extend .flex;
   justify-content: space-between;
 }
+
+.abs {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  right: 50%;
+}

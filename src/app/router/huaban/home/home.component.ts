@@ -46,7 +46,6 @@ export class HomeComponent implements OnInit {
         this.menu = JSON.parse(result.menu);
         this.menu.categories = this.menu.categories.slice(0,9)
         this.favorite = JSON.parse(result.menu).categories;
-        console.log(this.menu)
         this.banner = JSON.parse(result.banner)
         let i:number = (Math.random()*5)
         i = parseInt(i.toString());
@@ -67,10 +66,8 @@ export class HomeComponent implements OnInit {
     this.visibleMenu = true;
   }
   search() {
-    console.log(this.searchValue)
     if(!this.searchValue)this.searchList=[];
     this.http.searchAuto({q:this.searchValue,size:6}).subscribe((res:any) => {
-      console.log('值',res)
       this.searchList = res.result.list
     }, (err:any) => {
       console.log('错误',err)
@@ -79,7 +76,6 @@ export class HomeComponent implements OnInit {
   enter(val:string) {
     if(val)this.searchValue = val;
     this.http.search({q:this.searchValue}).subscribe((res:any) => {
-      console.log('值',res)
 
     }, (err:any) => {
       console.log('错误',err)

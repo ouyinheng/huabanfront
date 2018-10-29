@@ -1,19 +1,19 @@
 <div class="author-out" style="font-size: 0.8rem;">
   <section class="author-section">
-    <div *ngFor="let item of list" class="img-item">
-      <img class="author-header" [src]="imgHost+item?.file.key" [alt]="item?.board.title">
-        <p class="author-article" *ngIf="item.raw_text">{{item?.raw_text.length>=28?item.raw_text.substr(0,28)+'...':item.raw_text}}</p>
+    <div *ngFor="let item of objArr" class="img-item" [style.top.px]="item.top" [style.left.px]="item.left">
+      <img class="author-header" [style.width.px]="item.width" [style.height.px]="item.height" [src]="imgHost+item?.item.file.key" [alt]="item?.item.board.title">
+        <p class="author-article" *ngIf="item.item.raw_text">{{item?.item.raw_text.length>=28?item.item.raw_text.substr(0,28)+'...':item.item.raw_text}}</p>
       <footer class="author-footer">
         <div class="author-footer-left">
-          <img [src]="imgHost+item?.user.avatar.key" alt="">
+          <img [src]="imgHost+item?.item.user.avatar.key" alt="">
         </div>
         <div class="author-footer-right">
           <div style="color:#9E7E6B;">
             <div>
-              <span>{{item?.user.username}}</span>
+              <span>{{item?.item.user.username}}</span>
               <span style="color:gainsboro">&nbsp;采集到</span>
             </div>
-            <div>{{item?.board.title}}</div>
+            <div>{{item?.item?.board.title}}</div>
           </div>
         </div>
       </footer>

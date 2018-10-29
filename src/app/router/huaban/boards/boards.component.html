@@ -6,7 +6,8 @@
               <h3 style="margin-right: 10px;">{{infos?.title}}</h3>
               <span class="font-md" style="color:#9E7E6B;"><span style="color: #777;">所属分类：</span>{{infos?.category_name}}</span>
             </div>
-            <pre class="font-md font-color" style="margin-top: 15px;color: #777;">{{infos?.description}}</pre>
+            <pre *ngIf="isShow" (click)="isShow = false" class="font-md font-color" style="margin-top: 15px;color: #777;">{{infos?.description.substr(0,50)}}...</pre>
+            <pre *ngIf="!isShow" (click)="isShow = true" class="font-md font-color" style="margin-top: 15px;color: #777;">{{infos?.description}}</pre>
           </div>
           <div class="boards-header-right"></div>
       </div>
@@ -16,17 +17,31 @@
       </div>
     </header>
     <section class="boards-section">
-      <div *ngFor="let item of infos?.pins,let i=index" class="img-group" (click)="showDialog(i)">
-        <img [src]="host+item.file.key" [alt]="item.file.theme">
+      <div *ngFor="let item of objArr, let i=index" [style.top.px]="item.top" [style.left.px]="item.left" class="img-group" (click)="showDialog(i)">
+        <img *ngIf="!item.no" [src]="host+item.item.file.key" [alt]="item.item.file.theme" [style.width.px]="item.width" [style.height.px]="item.height">
       </div>
     </section>
     <footer></footer>
 </div>
-<div class="o-dialog" *ngIf="visibleDialog">
+<div class="o-dialog color-dialog" *ngIf="visibleDialog">
     <span class="fa fa-times close" aria-hidden="true" (click)="close()"></span>
     <span class="fa fa-angle-left left" aria-hidden="true"></span>
     <span class="fa fa-angle-right right" aria-hidden="true"></span>
     <dialog open class="o-item">
-        asdf
+        <div class="dialog-img">
+          <img class="showimg" [src]="host+dialogImg" alt="">
+        </div>
+        <div class="dialog-img">
+          <header class="dialog-header mb-4">
+            <img style="display:inline-block;width: 50px;height:50px;" [src]="host+infos?.user.avatar.key" alt="">
+            <div class="ml-3">
+              <p>{{infos?.user.username}}</p>
+              <p class="intro mt-1">采集于{{imgInfo?.pin.created_at | date: 'yyyy-MM-dd HH:mm:ss'}}</p>
+            </div>
+          </header>
+          <article>
+            <pre>{{imgInfo?.pin.raw_text}}</pre>
+          </article>
+        </div>
     </dialog>
 </div>
