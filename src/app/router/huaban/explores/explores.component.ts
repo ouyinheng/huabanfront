@@ -24,7 +24,7 @@ export class ExploresComponent implements OnInit {
   getInfo(params:any) {
     this.http.getAnthorInfo(params).subscribe((res:any) => {
       if(res.result) {
-        this.list = JSON.parse(res.result)
+        this.list = res.result.info
         this.changeValue();
       }
     })
@@ -85,5 +85,6 @@ export class ExploresComponent implements OnInit {
           this.isLoading = true;
         })
       }
-  }
+  })
+}
 }

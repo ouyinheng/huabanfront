@@ -54,6 +54,12 @@
     </div>
   </div>
 </header>
+<div class="center-nav">
+  <div class="nav-items" *ngFor="let item of explores" (click)="navTo('explores', item.urlname)">
+    <div class="nav-bg" [style.background-image]="'url(' + imgHost+item?.cover.key+ ')'"></div>
+    <span class="title">{{item.name}}</span>
+  </div>
+</div>
 <section class="section-img">
   <div class="img-group">
     <div *ngFor="let item of imgList" class="img-out" (click)="navTo(item.type, item.urlname, item.board_id)">

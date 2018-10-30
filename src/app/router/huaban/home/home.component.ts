@@ -29,6 +29,7 @@ export class HomeComponent implements OnInit {
   favorite:any = null;
   searchValue:string = '';
   searchList:any = [];
+  explores:any[] = [];
   ngOnInit() {
     window.addEventListener('scroll',(e:any)=>{
       let top = document.documentElement.scrollTop;
@@ -41,12 +42,13 @@ export class HomeComponent implements OnInit {
       if(res.result) {
         let that = this;
         let result = res.result;
-        this.imgList = JSON.parse(result.recom);
+        this.imgList = result.recom;
         this.titleService.setTitle(result.title);
-        this.menu = JSON.parse(result.menu);
+        this.menu = JSON.parse(JSON.stringify(result.menu));
         this.menu.categories = this.menu.categories.slice(0,9)
-        this.favorite = JSON.parse(result.menu).categories;
-        this.banner = JSON.parse(result.banner)
+        this.favorite = result.menu.categories;
+        this.banner = result.banner
+        this.explores = result.explores
         let i:number = (Math.random()*5)
         i = parseInt(i.toString());
         this.bannerImg = this.host+this.banner[i].cover.key
@@ -57,7 +59,7 @@ export class HomeComponent implements OnInit {
   }
   getHomeImage(page:number) {
     this.http.getHuabanHome(page).subscribe((res:any) => {
-      if(res.result)this.imgList.push(...JSON.parse(res.result).recommends)
+      if(res.result)this.imgList.push(...res.result.recommends)
     }, (err:any) => {
       console.log('err:----->',err)
     })

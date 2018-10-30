@@ -28,8 +28,19 @@
     <span class="fa fa-angle-left left" aria-hidden="true"></span>
     <span class="fa fa-angle-right right" aria-hidden="true"></span>
     <dialog open class="o-item">
-        <div class="dialog-img">
-          <img class="showimg" [src]="host+dialogImg" alt="">
+        <div class="flex">
+          <div class="dialog-img mr-2">
+            <img class="showimg" [src]="host+imgInfo?.pin.file.key" alt="">
+          </div>
+          <div class="left-list">
+            <header class="dialog-header mb-4 flex">
+              <img style="display:inline-block;width: 50px;height:50px;" [src]="host+infos?.user.avatar.key" alt="">
+              <div class="ml-3">
+                <p class="">{{imgInfo?.pin.board.title}}</p>
+                <p class="intro mt-2">{{infos?.user.username}}</p>
+              </div>
+            </header>
+          </div>
         </div>
         <div class="dialog-img">
           <header class="dialog-header mb-4">

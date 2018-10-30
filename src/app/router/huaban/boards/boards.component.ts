@@ -31,9 +31,7 @@ export class BoardsComponent implements OnInit {
   ) { 
   }
   showDialog(index:string) {
-    console.log(index)
     this.dialogImg = this.infos.pins[index].file.key
-    console.log(this.infos)
     this.visibleDialog = true;
     this.getImgInfo(this.infos.pins[index].pin_id)
   }
