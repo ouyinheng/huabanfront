@@ -3,7 +3,7 @@
   <nav class="tj-nav" [id]="tpCls">
     <div class="center">
       <div class="tj-nav-left">
-        <img [src]="tpCls?'/assets/images/logo_red.svg':'/assets/images/logo_wt.svg'" alt="">
+        <img [src]="!!tpCls?'/assets/images/logo_red.svg':'/assets/images/logo_wt.svg'" alt="">
         <span>首页</span>
         <span>发现</span>
         <span>最新</span>
@@ -19,7 +19,7 @@
             </section>
             <footer class="v-center">
               <span class="iconfont icon-tuding"></span>
-              <div class="v-center" style="text-align: center;">
+              <div class="v-center text-center">
                 <span>关于</span>
                 <span>帮助中心</span>
                 <span>反馈</span>
@@ -49,7 +49,7 @@
         <p *ngFor="let item of searchList" class="list-items" (click)="enter(item)">{{item}}</p>
       </div>
     </div>
-    <div style="text-align: center;padding: 10px 0;color: white;">
+    <div class="text-center py-2 font-color-b">
       <p>热门搜索：双十一素材、创意合成、壁纸那些事</p>
     </div>
   </div>
@@ -64,13 +64,13 @@
   <div class="img-group">
     <div *ngFor="let item of imgList" class="img-out" (click)="navTo(item.type, item.urlname, item.board_id)">
       <a *ngIf="item.cover.key">
-        <img [src]="imgHost+item.cover.key" [alt]="item?.title">
+        <img [src]="item.cover?imgHost+item.cover.key:''" [alt]="item?.title">
       </a>
       <a *ngIf="item.avatar" class="section-user">
-        <div style="display: flex;flex-direction: column;align-items: center;font-size: 0.8rem;">
-            <img [src]="imgHost+item?.avatar.key" [alt]="item?.title">
+        <div class="flex-h" style="font-size: 0.8rem;">
+            <img [src]="item.avatar?imgHost+item.avatar.key:''" [alt]="item?.title">
             <span style="font-size: 1.1rem;">{{item.title}}</span>
-            <p style="padding-top: 5px;color: gray;">
+            <p class="pt-1" style="color: gray;">
               <span>{{item.pin_count}}&nbsp;采集&nbsp;&nbsp;&nbsp;</span>
               <span>{{item.follow_count}}&nbsp;粉丝</span>
             </p>

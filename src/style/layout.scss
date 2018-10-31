@@ -8,14 +8,17 @@
 .flex-h {
   @extend .flex;
   flex-direction: column;
+  align-items: center;
 }
 .flex-a {
   @extend .flex;
   justify-content: space-around;
+  align-items: center;
 }
 .flex-b {
   @extend .flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .abs {
@@ -23,4 +26,7 @@
   bottom: 0;
   left: 50%;
   right: 50%;
+}
+.text-center {
+  text-align: center;
 }
