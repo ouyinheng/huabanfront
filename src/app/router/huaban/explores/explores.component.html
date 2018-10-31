@@ -1,4 +1,10 @@
 <div class="author-out" style="font-size: 0.8rem;">
+  <header class="ex-header flex-a">
+    <div style="box-sizing: border-box;padding: 50px;text-align: center">
+      <p class="font-color-b font-xx p-3">{{name}}</p>
+      <p class="font-color-b ">{{des}}</p>
+    </div>
+  </header>
   <section class="author-section">
     <div *ngFor="let item of objArr" class="img-item" [style.top.px]="item.top" [style.left.px]="item.left">
       <img class="author-header" [style.width.px]="item.width" [style.height.px]="item.height" [src]="imgHost+item?.item.file.key" [alt]="item?.item.board.title">

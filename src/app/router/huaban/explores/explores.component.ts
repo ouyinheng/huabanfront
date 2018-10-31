@@ -21,10 +21,14 @@ export class ExploresComponent implements OnInit {
   objArr:any[] = [];
   list:any[] = [];;
   isLoading:boolean = true;
+  name:string = null;
+  des:string = null;
   getInfo(params:any) {
     this.http.getAnthorInfo(params).subscribe((res:any) => {
       if(res.result) {
         this.list = res.result.info
+        this.name = res.result.name;
+        this.des = res.result.description;
         this.changeValue();
       }
     })
