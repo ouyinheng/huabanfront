@@ -10,12 +10,13 @@ import { HomeComponent } from './huaban/home/home.component'
   imports: [
     CommonModule,
     RouterModule.forChild([
-      {path: '', component: ShowimageComponent},
+      { path: '', redirectTo: 'home' ,pathMatch:'full'},
+      {path: 'home', component: ShowimageComponent},
       {path: 'huaban', component: HuabanComponent}
     ]),
     ComModule
   ],
   declarations: [ShowimageComponent, HuabanComponent, HomeComponent],
-  exports: [ RouterModule ]
+  exports: []
 })
 export class PictureModule { }

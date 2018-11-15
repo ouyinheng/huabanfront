@@ -20,6 +20,6 @@ import { ExploresComponent } from './explores/explores.component';
     FormsModule
   ],
   declarations: [ HomeComponent, AnthorComponent, BoardsComponent, ExploresComponent ],
-  exports: [ RouterModule ]
+  exports: []
 })
 export class HuabanModule { }

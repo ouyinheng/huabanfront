@@ -10,12 +10,11 @@ import { HomeComponent } from './home/home.component';
     CommonModule,
     RouterModule.forChild([
       {path: '', component: HomeComponent}
-
     ]),
     ComModule,
     FormsModule
   ],
   declarations: [  HomeComponent],
-  exports: [ RouterModule ]
+  exports: []
 })
 export class ComdisModule { }

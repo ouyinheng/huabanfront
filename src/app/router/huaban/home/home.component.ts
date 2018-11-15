@@ -85,8 +85,8 @@ export class HomeComponent implements OnInit {
   }
   navTo(type:string, urlname:string, board_id:string) {
     if(type=='users') return;
-    if(type=='boards')window.open(`/huaban/anthor/${type}/${board_id}`)
-    else window.open(`/huaban/anthor/${type}/${urlname}`)
+    if(type=='boards')window.open(`/anthor/${type}/${board_id}`)
+    else window.open(`/anthor/${type}/${urlname}`)
   }
   loadMore() {
     this.getHomeImage(++this.page)
