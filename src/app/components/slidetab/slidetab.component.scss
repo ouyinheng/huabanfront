@@ -1,0 +1,36 @@
+.tab-group {
+  width: 100%;
+  font-size: 0.8rem;
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  background-color: white;
+  .slide-bottom {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0px;
+    width: 40px;
+    height: 1px;
+    background-color: red;
+    transform: scale(.5);
+    transition: all .3s;
+  }
+  .tab-item {
+    width: 40px;
+    line-height: 30px;
+    text-align: center;
+    position: relative;
+    transition: all .5s;
+  }
+  .active {
+    color: RGB(226,25,24);
+  }
+}
+.section {
+  position: absolute;
+  top: 0px;
+  left: 0;
+  right:0;
+  bottom: 0;
+}

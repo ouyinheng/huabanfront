@@ -5,6 +5,8 @@ import { PictureComponent } from './picture/picture.component';
 import { OinputComponent } from './oinput/oinput.component';
 import { SearchlistComponent } from './searchlist/searchlist.component';
 import { DialogComponent } from './dialog/dialog.component';
+import { SlidetabComponent } from './slidetab/slidetab.component';
+import { SlidecontentComponent } from './slidecontent/slidecontent.component';
 
 @NgModule({
   imports: [
@@ -16,14 +18,18 @@ import { DialogComponent } from './dialog/dialog.component';
     PictureComponent,
     OinputComponent,
     SearchlistComponent,
-    DialogComponent
+    DialogComponent,
+    SlidetabComponent,
+    SlidecontentComponent
   ],
   exports: [
     ReactiveFormsModule,
     PictureComponent,
     OinputComponent,
     SearchlistComponent,
-    DialogComponent
+    DialogComponent,
+    SlidetabComponent,
+    SlidecontentComponent
   ]
 })
 export class ComModule {

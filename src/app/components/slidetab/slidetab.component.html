@@ -1,0 +1,9 @@
+<div>
+  <ul class="v-center tab-group">
+    <li class="tab-item" [class.active]="i==now" *ngFor="let item of tabs;let i=index" (click)="move(i)">{{item}}</li>
+    <div class="slide-bottom" [style.left.px]="left"></div>
+  </ul>
+  <!-- <div class="mt-6 section">
+    <slide-content [tab]='now'></slide-content>
+  </div> -->
+</div>
